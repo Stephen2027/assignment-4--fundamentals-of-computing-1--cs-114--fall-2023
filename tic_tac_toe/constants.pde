@@ -1,2 +1,2 @@
-final int gridSize = 3;
-final int cellSize = 500 / gridSize;
+final int boardSize = 3;
+final int squareSize = 500 / boardSize;
