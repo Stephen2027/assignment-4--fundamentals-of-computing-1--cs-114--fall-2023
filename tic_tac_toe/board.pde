@@ -60,6 +60,7 @@ boolean boardFull() {
 boolean validMove(int index) {
   return index >= 0 && index < boardSize * boardSize;
 }
+
 boolean emptySquare(int row, int col) {
   return board[row][col] == ' ';
 }
