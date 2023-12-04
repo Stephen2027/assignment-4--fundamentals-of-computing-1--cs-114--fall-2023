@@ -1,17 +1,17 @@
-char[][] board = new char[gridSize][gridSize];
+char[][] board = new char[boardSize][boardSize];
 boolean gameInProgress = true
 
 void initializeBoard() {
-  for (int row = 0; row < gridSize; row++) {
-    for (int col = 0; col < gridSize; col++) {
+  for (int row = 0; row < boardSize; row++) {
+    for (int col = 0; col < boardSize; col++) {
       board[row][col] = ' ';
     }
   }
 }
 
 void displayBoard() {
-  for (int row = 0; row < gridSize; row++) {
-    for (int col = 0; col < gridSize; col++) {
+  for (int row = 0; row < boardSize; row++) {
+    for (int col = 0; col < boardSize; col++) {
       print(board[row][col] + " ");
     }
     println();
@@ -29,7 +29,7 @@ void computerMove() {
 }
 
 boolean checkWin(char player) {
-  for (int i = 0; i < gridSize; i++) {
+  for (int i = 0; i < boardSize; i++) {
     if (board[i][0] == player && board[i][1] == player && board[i][2] == player) {
       return true;
     }
@@ -47,8 +47,8 @@ boolean checkWin(char player) {
 }
 
 boolean boardFull() {
-  for (int row = 0; row < gridSize; row++) {
-    for (int col = 0; col < gridSize; col++) {
+  for (int row = 0; row < boardSize; row++) {
+    for (int col = 0; col < boardSize; col++) {
       if (board[row][col] == ' ') {
         return false;
       }
@@ -58,7 +58,7 @@ boolean boardFull() {
 }
 
 boolean validMove(int index) {
-  return index >= 0 && index < gridSize * gridSize;
+  return index >= 0 && index < boardSize * boardSize;
 }
 boolean emptySquare(int row, int col) {
   return board[row][col] == ' ';
@@ -66,11 +66,11 @@ boolean emptySquare(int row, int col) {
 
 int[] findEmptySquare() {
   int[] move = new int[2];
-  move[0] = int(random(gridSize));
-  move[1] = int(random(gridSize));
+  move[0] = int(random(boardSize));
+  move[1] = int(random(boardSize));
   while (!isEmptySquare(move[0], move[1])) {
-    move[0] = int(random(gridSize));
-    move[1] = int(random(gridSize));
+    move[0] = int(random(boardSize));
+    move[1] = int(random(boardSize));
   }
   return move;
 }
