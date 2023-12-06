@@ -1,5 +1,5 @@
-char[][] board = new char[boardSize][boardSize];
-boolean gameInProgress = true
+char[][] board = new char[3][3];
+boolean gameInProgress = true;
 
 void initializeBoard() {
   for (int row = 0; row < boardSize; row++) {
@@ -30,17 +30,11 @@ void computerMove() {
 
 boolean checkWin(char player) {
   for (int i = 0; i < boardSize; i++) {
-    if (board[i][0] == player && board[i][1] == player && board[i][2] == player) {
-      return true;
-    }
-    if (board[0][i] == player && board[1][i] == player && board[2][i] == player) {
+    if ((board[i][0] == player && board[i][1] == player && board[i][2] == player) || (board[0][i] == player && board[1][i] == player && board[2][i] == player)) {
       return true;
     }
   }
-  if (board[0][0] == player && board[1][1] == player && board[2][2] == player) {
-    return true;
-  }
-  if (board[0][2] == player && board[1][1] == player && board[2][0] == player) {
+  if ((board[0][0] == player && board[1][1] == player && board[2][2] == player) || (board[0][2] == player && board[1][1] == player && board[2][0] == player)) {
     return true;
   }
   return false;

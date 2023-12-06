@@ -1,14 +1,39 @@
+import java.lang.String;
+
 void setup() {
   size(500, 500);
 
   initializeBoard();
+  isGameactive = true;
 
   println("Computer starts. Press a key between 0 and 8 to make your move.");
 }
 
+//void computerMove() {
+//  int index;
+//  do {
+//    index = int(random(9));
+//  } while (validMove(index));
+
+//  int row = index / boardSize;
+//  int col = index % boardSize;
+
+//  makeMove(row, col, computerSymbol);
+//}
+
+void endGame(String result) {
+  println(result);
+  isGameactive = false;
+}
+
+//boolean validMove(int index) {
+//  return (index >= 0) && (index < boardSize * boardSize);
+//}
+
 void draw() {
 
   drawBoard();
+  // boolean isGameactive = false;
 
   if (keyPressed && isGameactive) {
     int index = key - '0';
@@ -39,28 +64,7 @@ void draw() {
         println("Invalid move. Square already taken. Press a key between 0 and 8");
       }
     } else {
-      println("Invalid move. Please select a number between 0 and 8 to amke your move");
+      println("Invalid move. Please select a number between 0 and 8 to make your move");
     }
   }
-}
-
-void computerMove() {
-  int index;
-  do {
-    index = int(random(9));
-  } while (validMove(index));
-
-  int row = index / boardSize;
-  int col = index % boardSize;
-
-  makeMove(row, col, computerSymbol);
-}
-
-void endGame(string result) {
-  println(result);
-  isGameactive = false;
-}
-
-boolean validMove(int index) {
-  return index >= 0 && index < boardSize * boardSize
 }
