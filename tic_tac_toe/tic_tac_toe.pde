@@ -9,31 +9,15 @@ void setup() {
   println("Computer starts. Press a key between 0 and 8 to make your move.");
 }
 
-//void computerMove() {
-//  int index;
-//  do {
-//    index = int(random(9));
-//  } while (validMove(index));
-
-//  int row = index / boardSize;
-//  int col = index % boardSize;
-
-//  makeMove(row, col, computerSymbol);
-//}
-
 void endGame(String result) {
   println(result);
   isGameactive = false;
 }
 
-//boolean validMove(int index) {
-//  return (index >= 0) && (index < boardSize * boardSize);
-//}
 
 void draw() {
 
   drawBoard();
-  // boolean isGameactive = false;
 
   if (keyPressed && isGameactive) {
     int index = key - '0';
