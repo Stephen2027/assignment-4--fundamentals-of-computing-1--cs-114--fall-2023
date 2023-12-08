@@ -6,6 +6,7 @@ void setup() {
   initializeBoard();
   isGameactive = true;
 
+  computerMove();
   println("Computer starts. Press a key between 0 and 8 to make your move.");
 }
 
