@@ -1,22 +1,22 @@
 void drawCircleinGrid(int row, int col, float squareSize) {
-  float x = col * squareSize + squareSize / 2;
-  float y = row * squareSize + squareSize / 2;
+  float positionX = col * squareSize + squareSize / 2;
+  float positionY = row * squareSize + squareSize / 2;
   float diameter = squareSize * 0.8;
-  drawCircle(x, y, diameter);
+  drawCircle(positionX, positionY, diameter);
 }
 
 void drawCrossinGrid(int row, int col, float squareSize) {
-  float x = col * squareSize;
-  float y = row * squareSize;
+  float positionX = col * squareSize;
+  float positionY = row * squareSize;
   float size = squareSize * 0.8;
-  drawCross(x + squareSize / 2, y + squareSize / 2, size);
+  drawCross(positionX + squareSize / 2, positionY + squareSize / 2, size);
 }
 
-void drawCircle(float x, float y, float diameter) {
-  ellipse(x, y, diameter, diameter);
+void drawCircle(float positionX, float positionY, float diameter) {
+  ellipse(positionX, positionY, diameter, diameter);
 }
 
-void drawCross(float x, float y, float size) {
-  line(x - size / 2, y - size / 2, x + size / 2, y + size / 2);
-  line(x - size / 2, y + size / 2, x + size / 2, y - size / 2);
+void drawCross(float positionX, float positionY, float size) {
+  line(positionX - size / 2, positionY - size / 2, positionX + size / 2, positionY + size / 2);
+  line(positionX - size / 2, positionY + size / 2, positionX + size / 2, positionY - size / 2);
 }
