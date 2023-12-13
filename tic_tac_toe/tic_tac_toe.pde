@@ -21,6 +21,7 @@ void endGame(String result) {
 
 void draw() {
 
+  // Calls drawBoard function into the tic_tac_toe.pde file
   drawBoard();
 
   // Check the move when a key is pressed in an active game

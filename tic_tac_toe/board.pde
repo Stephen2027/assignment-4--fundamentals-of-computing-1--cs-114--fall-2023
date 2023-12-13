@@ -68,9 +68,11 @@ boolean emptySquare(int row, int col) {
 }
 
 int[] findEmptySquare() {
+  // Create array to store row and column corrdinate of empty square
   int[] move = new int[2];
   move[0] = int(random(boardSize));
   move[1] = int(random(boardSize));
+  // Continue generating random positions until an empty square
   while (!isEmptySquare(move[0], move[1])) {
     move[0] = int(random(boardSize));
     move[1] = int(random(boardSize));
@@ -106,16 +108,18 @@ void drawBoard() {
 // Create Minimax algorithm for the computer to find the best move
 int getMiniMax(int depth, boolean isMax) {
   if (checkWin(userSymbol)) {
-    return -10;
+    return -1; // Placeholder for user victory
   } else if (checkWin(computerSymbol)) {
-    return 10;
+    return 1; // Placeholder for computer victory
   } else if (boardFull()) {
-    return 0;
+    return 0; // Placeholder for a draw
   }
 
+  // Maximize player if current move is for the user
   if (isMax) {
-    int bestScore = Integer.MIN_VALUE;
+    int bestScore = -1;
 
+    // Loop through each row and column on the board
     for (int row = 0; row < boardSize; row++) {
       for (int col = 0; col < boardSize; col++) {
         if (board[row][col] == ' ') {
@@ -170,7 +174,7 @@ int[] findBestMove() {
 
   return bestMove;
 }
-
+// Checks if the inputted square is empty
 boolean isEmptySquare(int row, int col) {
   return board[row][col] == ' ';
 }
