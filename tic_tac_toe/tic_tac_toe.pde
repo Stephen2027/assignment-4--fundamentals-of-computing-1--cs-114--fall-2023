@@ -35,12 +35,14 @@ void draw() {
       if (emptySquare(row, col)) {
         makeMove(row, col, userSymbol);
 
+        // Check if the user has won
         if (checkWin(userSymbol)) {
           println("The user won!");
           isGameactive = false;
         } else {
           computerMove();
 
+          // Check if computer won
           if (checkWin(computerSymbol)) {
             println("The computer won!");
             isGameactive = false;
