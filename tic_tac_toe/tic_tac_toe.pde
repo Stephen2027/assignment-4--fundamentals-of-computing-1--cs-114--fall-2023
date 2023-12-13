@@ -47,12 +47,10 @@ void draw() {
           } else if (boardFull()) {
             println("Neither you nor the computer has won");
             isGameactive = false;
-          } else {
-            println("Game still in progress");
           }
         }
       } else {
-        println("Invalid move. Square already taken. Press a key between 0 and 8");
+        println("Game still in progress");
       }
     } else {
       println("Invalid move. Please select a number between 0 and 8 to make your move");
